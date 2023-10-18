@@ -12,6 +12,7 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Details from "./Components/Details/Brands";
 import AddProduct from "./Components/AddProduct/AddProduct";
+import Cart from "./Components/Cart/Cart";
   
 
 
@@ -34,12 +35,17 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/Brands/:id",
+        path: "/Brands/:brandName",
         element: <Details></Details>,
+        loader:() => fetch("http://localhost:5000/submit-form"),
       },
       {
         path: "/add",
         element: <AddProduct></AddProduct>,
+      },
+      {
+        path: "/cart",
+        element: <Cart></Cart>,
       },
     ],
   },

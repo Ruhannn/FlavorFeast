@@ -2,32 +2,49 @@
   {
     "id": 1,
     "brandName": "Coca-Cola",
-    "image": "https://i.ibb.co/zsDbRLK/1068711.jpg"
+    "image": "https://i.ibb.co/zsDbRLK/1068711.jpg",
+    "CarouselImage1": "https://www.coca-cola.com/content/dam/onexp/bd/home-images-bangladesh/brands/coca-cola/Coke-1280x604.jpg/width1960.jpg",
+    "CarouselImage2": "https://www.coca-cola.com/content/dam/onexp/bd/home-images-bangladesh/brands/fanta/new2-banner-resize/Fanta-desktop.png/width1960.png",
+    "CarouselImage3": "https://www.coca-cola.com/content/dam/onexp/bd/home-images-bangladesh/new_banner_desktop_1280x604.jpg/width1960.jpg"
   },
   {
     "id": 2,
-
     "brandName": "McDonald's",
-    "image": "https://i.ibb.co/fF2sMbn/wallpaperflare-com-wallpaper.jpg"
+    "image": "https://i.ibb.co/fF2sMbn/wallpaperflare-com-wallpaper.jpg",
+    "CarouselImage1": "https://www.mcdonalds.com/content/dam/sites/usa/nfl/publication/1PUB_Sauces_2336x1040.jpg",
+    "CarouselImage2": "https://www.mcdonalds.com/content/dam/sites/usa/nfl/publication/1pub_10pcMcNuggets_2336x1040.jpg",
+    "CarouselImage3": "https://www.mcdonalds.com/content/dam/sites/usa/nfl/publication/1PUB_Desktop_Deals-v1_1168x520.jpg"
   },
   {
     "id": 3,
     "brandName": "Starbucks",
-    "image": "https://i.ibb.co/rchKSp0/Starbucks-Wallpapers-For-Free.jpg"
+    "image": "https://i.ibb.co/rchKSp0/Starbucks-Wallpapers-For-Free.jpg",
+    "CarouselImage1": "https://r4.wallpaperflare.com/wallpaper/466/533/271/starbucks-wallpaper-86d757bb46c85dcd2a984f73f20210cf.jpg",
+    "CarouselImage2": "https://c1.wallpaperflare.com/path/20/618/473/coffee-cafe-tea-lifestyle-a9d913f57f3553f34beccc008a9518a8.jpg",
+    "CarouselImage3": "https://c0.wallpaperflare.com/path/6/793/144/blur-cake-chair-close-up-e4daf2aa332641eed3a9e9b764655b62.jpg"
   },
   {
     "id": 4,
     "brandName": "PepsiCo",
-    "image": "https://i.ibb.co/SfHRwh6/429762.png"
+    "image": "https://i.ibb.co/SfHRwh6/429762.png",
+    "CarouselImage1": "https://wallpapercave.com/wp/wp2854285.jpg",
+    "CarouselImage2": "https://wallpapercave.com/wp/wp2813069.jpg",
+    "CarouselImage3": "https://wallpapercave.com/wp/wp2854309.jpg"
   },
   {
     "id": 5,
     "brandName": "Nestlé",
-    "image": "https://i.ibb.co/QDJWsP1/peakpx.jpg"
+    "image": "https://i.ibb.co/QDJWsP1/peakpx.jpg",
+    "CarouselImage1": "https://r4.wallpaperflare.com/wallpaper/941/989/173/5bd417d668c73-wallpaper-024152301d86de2b9ac8e23590d83942.jpg",
+    "CarouselImage2": "https://c1.wallpaperflare.com/path/958/390/483/cup-work-cofe-coffee-a46cc70b95b064216e1009718b7398b6.jpg",
+    "CarouselImage3": "https://c0.wallpaperflare.com/path/247/711/698/breakfast-business-caffeine-chair-1ece438e3788ac7642a61b6ef0038e77.jpg"
   },
   {
     "id": 6,
     "brandName": "Kellogg's",
-    "image": "https://i.ibb.co/ThSbN18/x10-Kelloggs-h-1-jpg-pagespeed-ic-w-M5-5l-VMSE.webp"
+    "image": "https://i.ibb.co/ThSbN18/x10-Kelloggs-h-1-jpg-pagespeed-ic-w-M5-5l-VMSE.webp",
+    "CarouselImage1": "https://wallpapercave.com/wp/wp4144746.jpg",
+    "CarouselImage2": "https://wallpapercave.com/wp/wp4144747.jpg",
+    "CarouselImage3": "https://wallpapercave.com/wp/wp4144749.jpg"
   }
 ]

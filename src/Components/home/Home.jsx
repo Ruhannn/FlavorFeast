@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Welcome from "../Welcome/Welcome";
+
 const Home = () => {
   const [brands, setBrands] = useState([]);
 
@@ -19,13 +21,14 @@ const Home = () => {
 
   return (
     <>
-      <section className="dark:bg-[#1a1625]  flex items-center justify-center">
-        <div className="container mx-auto bg-base-100 dark:bg-[#1a1625] p-4">
+      <section className="dark:bg-[#1a1625]  ">
+        <Welcome></Welcome>
+        <div className="container mx-auto bg-base-100 dark:bg-[#1a1625] p-4" id="take-a-look">
           <h1 className="text-4xl text-center my-8">Our Brands</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4">
             {brands.map((brand, index) => (
               <Link
-                to={`/Brands/${brand.id}`}
+                to={`/Brands/${brand.brandName}`}
                 className="bg-white dark:bg-[#2b2735] p-4 rounded-lg shadow-md transition duration-300 transform hover:scale-95"
                 key={index}>
                 <img

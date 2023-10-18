@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const AddProduct = () => {
   const [formData, setFormData] = useState({
@@ -11,9 +12,38 @@ const AddProduct = () => {
     rating: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    try {
+      const response = await fetch("http://localhost:5000/submit-form", {
+        method: "POST",
+        headers: {
+          "content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        // Display a success message
+        toast.success("Item added successfully!");
+
+
+        setFormData({
+          image: "",
+          name: "",
+          brand: "",
+          category: "",
+          price: "",
+          description: "",
+          rating: "",
+        });
+      } else {
+
+        toast.error("Failed to add item. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   const handleChange = (e) => {
@@ -79,7 +109,7 @@ input[type=number] {
     <>
       <div className="dark:bg-[#2f2b3a] h-auto">
         <style>{styles}</style>
-        <div className="container mx-auto py-14  ">
+        <div className="container mx-auto py-20  ">
           <form
             onSubmit={handleSubmit}
             className="grid grid-cols-1 md:grid-cols-2 dark:text-white lg:grid-cols-3 gap-8 max-w-3xl mx-auto ">
@@ -154,10 +184,12 @@ input[type=number] {
                   onChange={handleChange}
                   className="w-full appearance-none p-2 border rounded focus:outline-none focus:border-blue-500 bg-white dark:bg-[#76737e]">
                   <option value="">Select Category</option>
-                  <option value="Technology and Electronics">
-                    Technology and Electronics
-                  </option>
-                  <option value="Clothing">Clothing</option>
+                  <option value="Beverages">Beverages</option>
+                  <option value="FastFood">Fast Food</option>
+                  <option value="Coffee">Coffee</option>
+                  <option value="Snacks">Snacks</option>
+                  <option value="Dairy">Dairy</option>
+                  <option value="Cereals">Cereals</option>
                 </select>
                 <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
                   <svg
