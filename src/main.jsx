@@ -11,6 +11,7 @@ import AuthProvider from "./Provider/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Details from "./Components/Details/Brands";
+import AddProduct from "./Components/AddProduct/AddProduct";
   
 
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/Brands/:id",
         element: <Details></Details>,
+      },
+      {
+        path: "/add",
+        element: <AddProduct></AddProduct>,
       },
     ],
   },

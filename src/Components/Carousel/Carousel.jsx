@@ -7,7 +7,6 @@ const AutoplaySlider = withAutoplay(AwesomeSlider);
 const Carousel = () => (
   <AutoplaySlider
     play={true}
-    cancelOnInteraction={false}
     interval={6000}
     animation="foldOutAnimation"
     className="h-[600px] w-full -z-10"

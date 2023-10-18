@@ -14,6 +14,11 @@ const NavBar = () => {
           <a>Home</a>
         </li>
       </NavLink>
+      <NavLink to="/add">
+        <li>
+          <a>Add Product</a>
+        </li>
+      </NavLink>
       <NavLink to="/signup" className="block md:hidden lg:hidden">
         <li>
           <a>Signup</a>
