@@ -10,6 +10,7 @@ import SignUp from "./Components/login_signup/SignUp";
 import AuthProvider from "./Provider/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Details from "./Components/Details/Brands";
   
 
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/Brands/:id",
+        element: <Details></Details>,
       },
     ],
   },

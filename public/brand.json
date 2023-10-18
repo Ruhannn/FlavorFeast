@@ -1,25 +1,32 @@
 [
   {
+    "id": 1,
     "brandName": "Coca-Cola",
     "image": "https://i.ibb.co/zsDbRLK/1068711.jpg"
   },
   {
+    "id": 2,
+
     "brandName": "McDonald's",
     "image": "https://i.ibb.co/fF2sMbn/wallpaperflare-com-wallpaper.jpg"
   },
   {
+    "id": 3,
     "brandName": "Starbucks",
     "image": "https://i.ibb.co/rchKSp0/Starbucks-Wallpapers-For-Free.jpg"
   },
   {
+    "id": 4,
     "brandName": "PepsiCo",
     "image": "https://i.ibb.co/SfHRwh6/429762.png"
   },
   {
+    "id": 5,
     "brandName": "Nestlé",
     "image": "https://i.ibb.co/QDJWsP1/peakpx.jpg"
   },
   {
+    "id": 6,
     "brandName": "Kellogg's",
     "image": "https://i.ibb.co/ThSbN18/x10-Kelloggs-h-1-jpg-pagespeed-ic-w-M5-5l-VMSE.webp"
   }

@@ -8,11 +8,23 @@ const NavBar = () => {
   const { logOut, user } = useContext(AuthContext);
 
   const NavLinks = (
-    <NavLink to="/">
-      <li>
-        <a>Home</a>
-      </li>
-    </NavLink>
+    <>
+      <NavLink to="/">
+        <li>
+          <a>Home</a>
+        </li>
+      </NavLink>
+      <NavLink to="/signup" className="block md:hidden lg:hidden">
+        <li>
+          <a>Signup</a>
+        </li>
+      </NavLink>
+      <NavLink className="block md:hidden lg:hidden" to="/login">
+        <li>
+          <a>Login</a>
+        </li>
+      </NavLink>
+    </>
   );
 
   const handleLogOut = () => {
@@ -70,7 +82,7 @@ const NavBar = () => {
 `;
   return (
     <>
-    <style>{sty}</style>
+      <style>{sty}</style>
       <div className="navbar bg-base-100 dark:bg-[#2f2b3a]">
         <div className="navbar-start">
           <div className="dropdown">
@@ -98,7 +110,7 @@ const NavBar = () => {
         </div>
         <div className="navbar-center">
           <img
-            className="w-9"
+            className="w-9 hidden lg:block md:block"
             src="https://i.ibb.co/D59nNnw/ODUJEJ0-transformed.png"
             alt=""
           />
@@ -152,12 +164,13 @@ const NavBar = () => {
             <div className="dropdown dropdown-end">
               <label
                 tabIndex={0}
-                className="menu btn m-1 bg-base-300 text-black dark:bg-[#3d3f58] dark:text-white hover border-none hover:text-black">
+                className="menu btn m-1 bg-base-300 text-black dark:bg-[#3d3f58] dark:text-white border-none hover:text-black w-full hidden md:block lg:block">
                 Login/SignUp
               </label>
+
               <ul
                 tabIndex={0}
-                className="dropdown-content gap-5 z-[1] menu p-2 shadow bg-[#1A1B26] text-white rounded-box sm:w-52 md:w-64 lg:w-72 xl:w-96">
+                className="dropdown-content gap-5 z-[1] menu p-2 shadow dark:bg-[#1A1B26] dark:text-white text-black rounded-box sm:w-full md:w-64 lg:w-72 xl:w-96">
                 <Link
                   to="/login"
                   className="py-2 px-4 rounded hover:bg-blue-600 transition duration-300 block">
@@ -165,7 +178,7 @@ const NavBar = () => {
                 </Link>
                 <Link
                   to="/signup"
-                  className="text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300 block">
+                  className="dark:bg-[#1A1B26] dark:text-white text-black py-2 px-4 rounded hover:bg-blue-600 transition duration-300 block">
                   Sign up
                 </Link>
               </ul>
