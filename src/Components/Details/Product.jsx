@@ -1,29 +1,65 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { toast } from "react-toastify";
+// import { useEffect, useState } from "react";
+
 const Product = () => {
   const item = useLoaderData();
+  const { image, name, brand, category, price } = item;
+  const cartInfo = {
+    image,
+    name,
+    brand,
+    category,
+    price,
+  };
+
+  //   const [Item, setItem] = useState({})
+  //   useEffect(() => {
+  //     fetch(`http://localhost:5000/product/${item._id}`)
+  //         .then(res => res.json())
+  //         .then(data => setItem(data))
+  // }, [item._id])
+  const handleAddToCart = () => {
+    fetch("http://localhost:5000/cart", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(cartInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          toast.success("Product added to cart!");
+        }
+      });
+  };
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center min-h-screen py-2 dark:bg-[#1a1625]">
-<div className="md:border-2 mx-4 md:border-gray-400 md:rounded-lg md:p-4 mb-4 md:mb-0 group overflow-hidden relative transition duration-500 ease-in-out">
-  <img
-    src={item.image}
-    alt={item.name}
-    className="w-full h-90 object-cover mb-4 md:mb-0 transition-transform transform group-hover:scale-105"
-  />
-  <div className="absolute inset-0 bg-black bg-opacity-50 transition-opacity opacity-0 group-hover:opacity-100 flex items-center justify-center">
-    <p className="text-white text-lg font-bold">{item.name}</p>
-  </div>
-</div>
-
+      <div className="md:border-2 mx-4 md:border-gray-400 md:rounded-lg md:p-4 mb-4 md:mb-0 group overflow-hidden relative transition duration-500 ease-in-out">
+        <img
+          src={item.image}
+          alt={item.name}
+          className="w-full h-90 object-cover mb-4 md:mb-0 transition-transform transform group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50 transition-opacity opacity-0 group-hover:opacity-100 flex items-center justify-center">
+          <p className="text-white text-lg font-bold">{item.name}</p>
+        </div>
+      </div>
 
       <div className="md:ml-4 bg-slate-100 rounded-lg p-4 mx-4 dark:text-white dark:bg-[#131119]">
         <h1 className="text-2xl lg:text-5xl md:text-4xl font-bold mb-2 md:mb-4">
           {item.name}
         </h1>
         <p className="text-gray-600 dark:text-white">Brand: {item.brand}</p>
-        <p className="text-gray-600 font-bold dark:text-white">Category: {item.category}</p>
-        <p className="text-green-600 font-bold dark:text-white">Price: ${item.price}</p>
+        <p className="text-gray-600 font-bold dark:text-white">
+          Category: {item.category}
+        </p>
+        <p className="text-green-600 font-bold dark:text-white">
+          Price: ${item.price}
+        </p>
         <p className="text-gray-700 mb-2 md:mb-4 dark:text-white">
           Description: {item.description}
         </p>
@@ -49,7 +85,12 @@ const Product = () => {
             ))}
           </div>
         </div>
-          <Link className="btn bg-green-300 border-none dark:bg-slate-200 dark:hover:bg-slate-400 mt-6"><AiOutlineShoppingCart className="text-lg"></AiOutlineShoppingCart> Add to Cart</Link>
+        <Link
+          onClick={handleAddToCart}
+          className="btn bg-green-300 border-none dark:bg-slate-200 dark:hover:bg-slate-400 mt-6">
+          <AiOutlineShoppingCart className="text-lg"></AiOutlineShoppingCart>
+          Add to Cart
+        </Link>
       </div>
     </div>
   );
