@@ -24,6 +24,10 @@ const SignUp = () => {
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
+    if (password.length < 0) {
+      toast.error("give your password");
+      return;
+    }
     if (password.length < 6) {
       toast.error("Password should be at least 6 characters long");
       return;

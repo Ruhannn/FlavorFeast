@@ -9,12 +9,13 @@ import Login from "./Components/login_signup/Login";
 import SignUp from "./Components/login_signup/SignUp";
 import AuthProvider from "./Provider/AuthProvider";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import Details from "./Components/Details/Brands";
 import AddProduct from "./Components/AddProduct/AddProduct";
 import Cart from "./Components/Cart/Cart";
-  
-
+import Product from "./Components/Details/Product";
+import PrivateRoute from "./Route/PrivateRoute";
+import Update from "./Components/Update/Update";
 
 const router = createBrowserRouter([
   {
@@ -37,15 +38,39 @@ const router = createBrowserRouter([
       {
         path: "/Brands/:brandName",
         element: <Details></Details>,
-        loader:() => fetch("http://localhost:5000/submit-form"),
+        loader: () => fetch("http://localhost:5000/submit-form"),
       },
       {
         path: "/add",
-        element: <AddProduct></AddProduct>,
+        element: (
+          <PrivateRoute>
+            <AddProduct />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/cart",
-        element: <Cart></Cart>,
+        element: (
+          <PrivateRoute>
+            <Cart></Cart>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/update/:id",
+        element: <Update></Update>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/product-details/${params?.id}`),
+      },
+      {
+        path: "/product/:id",
+        element: (
+          <PrivateRoute>
+            <Product></Product>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/product-details/${params.id}`),
       },
     ],
   },
