@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Welcome from "../Welcome/Welcome";
+import FAQSection from "../FAQsection/FAQsection";
 
 const Home = () => {
   const [brands, setBrands] = useState([]);
@@ -45,6 +46,7 @@ const Home = () => {
             ))}
           </div>
         </div>
+        <FAQSection></FAQSection>
       </section>
     </>
   );

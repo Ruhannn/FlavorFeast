@@ -1,0 +1,18 @@
+[
+  {
+    "question": "How can I manage my restaurant's opening hours?",
+    "answer": "To update your restaurant's opening hours, navigate to the 'Settings' section in the admin dashboard. There, you can set the opening and closing times for each day of the week. Make sure to save your changes for the updated schedule to take effect."
+  },
+  {
+    "question": "What should I do if I run out of a particular ingredient?",
+    "answer": "In the 'Inventory' section, you can track the availability of ingredients. If you run out of a specific ingredient, click on 'Add Inventory' to update the stock. This helps in ensuring that your menu accurately reflects the items you can offer."
+  },
+  {
+    "question": "Can I customize the look of my restaurant's online menu?",
+    "answer": "Absolutely! Head to the 'Menu' section, and you'll find options to customize the appearance of your online menu. You can choose different themes, upload high-quality images, and arrange dishes to create an appealing and user-friendly menu for your customers."
+  },
+  {
+    "question": "How do I handle customer reservations?",
+    "answer": "For managing reservations, go to the 'Reservations' tab. You can view and confirm upcoming reservations, set the maximum number of guests, and customize reservation time slots. This helps in providing a seamless dining experience for your customers."
+  }
+]
