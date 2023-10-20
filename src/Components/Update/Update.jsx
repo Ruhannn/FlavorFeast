@@ -50,9 +50,9 @@ const Update = () => {
     price: product.price || "",
     description: product.description || "",
     rating: product.rating || "",
-});
+  });
 
-const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const handleChange = (e) => {
     const { name, value } = e.target;
     setText(e.target.value);
@@ -81,7 +81,7 @@ const [text, setText] = useState('');
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:5000/product-details/${_id}`,
+        `https://b8a10-brandshop-server-side-ruhannn-fdjh9nltn-ruhans-projects.vercel.app/product-details/${_id}`,
         {
           method: "PUT",
           headers: {
@@ -228,7 +228,7 @@ const [text, setText] = useState('');
               name="description"
               value={UpdateFromData.description}
               onChange={handleChange}
-              rows={Math.max(4, text.split('\n').length)} 
+              rows={Math.max(4, text.split("\n").length)}
               className="w-full p-2 border rounded focus:outline-none focus:border-blue-500 bg-white dark:bg-[#76737e]"></textarea>
           </div>
 

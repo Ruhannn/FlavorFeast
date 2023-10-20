@@ -15,18 +15,20 @@ const AddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/submit-form", {
-        method: "POST",
-        headers: {
-          "content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://b8a10-brandshop-server-side-ruhannn-fdjh9nltn-ruhans-projects.vercel.app/submit-form",
+        {
+          method: "POST",
+          headers: {
+            "content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
         // Display a success message
         toast.success("Item added successfully!");
-
 
         setFormData({
           image: "",
@@ -38,7 +40,6 @@ const AddProduct = () => {
           rating: "",
         });
       } else {
-
         toast.error("Failed to add item. Please try again.");
       }
     } catch (error) {

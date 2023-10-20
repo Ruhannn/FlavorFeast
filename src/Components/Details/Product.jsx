@@ -1,12 +1,15 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { toast } from "react-toastify";
-// import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Product = () => {
+  const { user } = useContext(AuthContext);
   const item = useLoaderData();
   const { image, name, brand, category, price } = item;
   const cartInfo = {
+    email: user.email,
     image,
     name,
     brand,
@@ -14,20 +17,17 @@ const Product = () => {
     price,
   };
 
-  //   const [Item, setItem] = useState({})
-  //   useEffect(() => {
-  //     fetch(`http://localhost:5000/product/${item._id}`)
-  //         .then(res => res.json())
-  //         .then(data => setItem(data))
-  // }, [item._id])
   const handleAddToCart = () => {
-    fetch("http://localhost:5000/cart", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(cartInfo),
-    })
+    fetch(
+      "https://b8a10-brandshop-server-side-ruhannn-fdjh9nltn-ruhans-projects.vercel.app/cart",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(cartInfo),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
@@ -38,7 +38,7 @@ const Product = () => {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center min-h-screen py-2 dark:bg-[#1a1625]">
-      <div className="md:border-2 mx-4 md:border-gray-400 md:rounded-lg md:p-4 mb-4 md:mb-0 group overflow-hidden relative transition duration-500 ease-in-out">
+      <div className="md:border-2 md:w-1/3 w-full mx-4 md:border-gray-400 md:rounded-lg md:p-4 mb-4 md:mb-0 group overflow-hidden relative transition duration-500 ease-in-out">
         <img
           src={item.image}
           alt={item.name}
@@ -49,7 +49,7 @@ const Product = () => {
         </div>
       </div>
 
-      <div className="md:ml-4 bg-slate-100 rounded-lg p-4 mx-4 dark:text-white dark:bg-[#131119]">
+      <div className="md:ml-4  md:w-2/3 w-full bg-slate-100 rounded-lg p-4 mx-4 dark:text-white dark:bg-[#131119]">
         <h1 className="text-2xl lg:text-5xl md:text-4xl font-bold mb-2 md:mb-4">
           {item.name}
         </h1>

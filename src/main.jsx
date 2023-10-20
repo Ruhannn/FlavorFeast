@@ -38,7 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/Brands/:brandName",
         element: <Details></Details>,
-        loader: () => fetch("http://localhost:5000/submit-form"),
+        loader: () =>
+          fetch(
+            "https://b8a10-brandshop-server-side-ruhannn-fdjh9nltn-ruhans-projects.vercel.app/submit-form"
+          ),
       },
       {
         path: "/add",
@@ -54,13 +57,15 @@ const router = createBrowserRouter([
           <PrivateRoute>
             <Cart></Cart>
           </PrivateRoute>
-        )
+        ),
       },
       {
         path: "/update/:id",
         element: <Update></Update>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product-details/${params?.id}`),
+          fetch(
+            `https://b8a10-brandshop-server-side-ruhannn-fdjh9nltn-ruhans-projects.vercel.app/product-details/${params?.id}`
+          ),
       },
       {
         path: "/product/:id",
@@ -70,7 +75,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product-details/${params.id}`),
+          fetch(
+            `https://b8a10-brandshop-server-side-ruhannn-fdjh9nltn-ruhans-projects.vercel.app/product-details/${params.id}`
+          ),
       },
     ],
   },
