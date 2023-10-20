@@ -108,12 +108,12 @@ input[type=number] {
 
   return (
     <>
-      <div className="dark:bg-[#2f2b3a] h-auto">
+      <div className="  dark:bg-[#2f2b3a] transition-colors duration-300 h-auto">
         <style>{styles}</style>
         <div className="container mx-auto py-20  ">
           <form
             onSubmit={handleSubmit}
-            className="grid grid-cols-1 md:grid-cols-2 dark:text-white lg:grid-cols-3 gap-8 max-w-3xl mx-auto ">
+            className="grid grid-cols-1 md:grid-cols-2   dark:text-white lg:grid-cols-3 gap-8 max-w-3xl mx-auto ">
             <div className="mb-4 md:mb-0">
               <label htmlFor="image" className="block text-sm font-bold mb-2">
                 Image

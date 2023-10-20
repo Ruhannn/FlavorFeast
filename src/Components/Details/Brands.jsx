@@ -4,6 +4,7 @@ import { FaEdit, FaEye } from "react-icons/fa";
 import AwesomeSlider from "react-awesome-slider";
 import withAutoplay from "react-awesome-slider/dist/autoplay";
 import "react-awesome-slider/dist/styles.css";
+import Loading from "../Loading/Loading";
 
 const BrandDetail = () => {
   const { brandName } = useParams();
@@ -30,7 +31,7 @@ const BrandDetail = () => {
   const filteredBrands = brands.filter((brand) => brand.brand === brandName);
 
   if (!brand) {
-    return <div>Loading...</div>;
+    return <Loading></Loading>;
   }
 
   const AutoplaySlider = withAutoplay(AwesomeSlider);

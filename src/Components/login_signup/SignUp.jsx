@@ -25,7 +25,7 @@ const SignUp = () => {
     const email = form.get("email");
     const password = form.get("password");
     const photo = form.get("photo");
-    console.log("handleSignUp  photo", photo)
+    console.log("handleSignUp  photo", photo);
     if (password.length < 0) {
       toast.error("give your password");
       return;
@@ -56,7 +56,7 @@ const SignUp = () => {
       });
   };
   return (
-    <div className="hero min-h-screen bg-slate-300 dark:bg-slate-950">
+    <div className="hero min-h-screen transition-colors duration-300 bg-slate-300 dark:bg-slate-950">
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
@@ -83,19 +83,6 @@ const SignUp = () => {
               <div className="form-control">
                 <label className="label">
                   <span className="label-text dark:text-[#ffffffc6]">
-                    photo URL
-                  </span>
-                </label>
-                <input
-                  type="text"
-                  name="photo"
-                  placeholder="give me your photo "
-                  className="input input-bordered dark:bg-[#44475a]"
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text dark:text-[#ffffffc6]">
                     Password
                   </span>
                 </label>
@@ -103,9 +90,10 @@ const SignUp = () => {
                   type="password"
                   name="password"
                   placeholder="Password"
-                  className="input input-bordered dark:bg-[#44475a]"
+                  className="input input-bordered  dark:bg-[#44475a]"
                 />
-                <p>
+                <p className="text-black dark:text-white">
+                  
                   Already have an account,
                   <Link to="/login" className="btn px-1 p-0 btn-link">
                     Log In

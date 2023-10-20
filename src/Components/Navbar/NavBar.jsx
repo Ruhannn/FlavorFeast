@@ -93,7 +93,7 @@ const NavBar = () => {
   return (
     <>
       <style>{sty}</style>
-      <div className="navbar bg-base-100 dark:bg-[#2f2b3a]">
+      <div className="navbar bg-base-100 dark:bg-[#2f2b3a] transition-colors duration-300">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -161,7 +161,7 @@ const NavBar = () => {
                   </label>
                   <ul
                     tabIndex={0}
-                    className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 dark:bg-[#282a36] dark:text-[#f8f8f2] dark:hover:text-[#bfbf6c] rounded-box w-52">
+                    className="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-gray-600-200 dark:bg-[#282a36] dark:text-[#f8f8f2] dark:hover:text-[#bfbf6c] rounded-box w-52">
                     <li>
                       <a className="justify-between">{user.email}</a>
                     </li>

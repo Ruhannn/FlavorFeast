@@ -22,15 +22,19 @@ const Home = () => {
 
   return (
     <>
-      <section className="dark:bg-[#1a1625]  ">
+      <section className="dark:bg-[#1a1625]">
         <Welcome></Welcome>
-        <div className="container mx-auto bg-base-100 dark:bg-[#1a1625] p-4" id="take-a-look">
-          <h1 className="text-4xl text-center dark:text-white font-medium my-8">Our Brands</h1>
+        <div
+          className="container mx-auto bg-base-100 dark:bg-[#1a1625] p-4"
+          id="take-a-look">
+          <h1 className="text-4xl text-center dark:text-white font-medium my-8">
+            Our Brands
+          </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4">
             {brands.map((brand, index) => (
               <Link
                 to={`/Brands/${brand.brandName}`}
-                className="bg-white dark:bg-[#2b2735] p-4 rounded-lg shadow-md transition duration-300 transform hover:scale-95"
+                className="bg-white dark:bg-[#2b2735] p-4 rounded-lg shadow-md transition duration-300 transform hover:animate-pulse hover:scale-95"
                 key={index}>
                 <img
                   className="w-full h-80 object-cover rounded-md mb-4"

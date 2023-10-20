@@ -55,7 +55,7 @@ const Login = () => {
       });
   };
   return (
-    <div className="hero min-h-screen bg-base-200 dark:bg-[#282a36] dark:text-[#ffffffc6] ">
+    <div className="hero min-h-screen bg-base-200 dark:bg-[#282a36] transition-colors duration-300 dark:text-[#ffffffc6] ">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center">
           <h1 className="text-5xl font-bold">
@@ -93,7 +93,7 @@ const Login = () => {
                 placeholder="password"
                 className="input input-bordered dark:bg-[#44475a]"
               />
-              <p>
+              <p className="text-black dark:text-white">
                 Welcome! If you're new,
                 <Link to="/signup" className="btn px-1 p-0 btn-link">
                   sign up here

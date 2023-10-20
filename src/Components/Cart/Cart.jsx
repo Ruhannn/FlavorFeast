@@ -4,16 +4,15 @@ import { FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 
+
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
-  const { user } = useContext(AuthContext);
+  const {user} = useContext(AuthContext)
 
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await fetch(
-          `https://b8a10-brandshop-server-side-ruhannn-fdjh9nltn-ruhans-projects.vercel.app/cart?email=${user.email}`
-        );
+        const response = await fetch(`https://b8a10-brandshop-server-side-ruhannn-fdjh9nltn-ruhans-projects.vercel.app/cart?email=${user.email}`);
         const data = await response.json();
         setCartItems(data);
       } catch (error) {
@@ -24,28 +23,24 @@ const Cart = () => {
     fetchCartItems();
   }, [user.email]);
 
-  const totalPrice = cartItems.reduce(
-    (acc, item) => acc + parseFloat(item.price),
-    0
-  );
 
-  const handleDelete = (_id) => {
+const totalPrice = cartItems.reduce((acc, item) => acc + parseFloat(item.price), 0);
+
+
+const handleDelete = (_id) => {
     Swal.fire({
-      title: "Are you sure?",
+      title: 'Are you sure?',
       text: "You won't be able to revert this!",
-      icon: "warning",
+      icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(
-          `https://b8a10-brandshop-server-side-ruhannn-fdjh9nltn-ruhans-projects.vercel.app/cart/${_id}`,
-          {
-            method: "DELETE",
-          }
-        )
+        fetch(`https://b8a10-brandshop-server-side-ruhannn-fdjh9nltn-ruhans-projects.vercel.app/cart/${_id}`, {
+          method: 'DELETE'
+        })
           .then((res) => res.json())
           .then((data) => {
             if (data.error) {
@@ -54,12 +49,8 @@ const Cart = () => {
               setCartItems((prevItems) =>
                 prevItems.filter((item) => item._id !== _id)
               );
-
-              Swal.fire(
-                "Deleted!",
-                "Your Product has been deleted.",
-                "success"
-              );
+  
+              Swal.fire('Deleted!', 'Your Product has been deleted.', 'success');
             }
           })
           .catch((error) => {
@@ -69,13 +60,12 @@ const Cart = () => {
     });
   };
   return (
-    <section className="dark:bg-[#211f2a] h-auto">
+    <section className="dark:bg-[#211f2a] transition-colors duration-300 h-auto">
       <div className="container mx-auto p-4">
         {cartItems.length === 0 && (
-          <div className="text-center   text-xl h-screen">
-            <h1 className="dark:text-white">
-              Your cart is empty. Add items to see them here!
-            </h1>
+          <div className="text-center flex justify-center flex-col items-center text-3xl h-screen">
+            <h1 className="dark:text-white">Your cart is empty. Add items to see them here!</h1>
+            <img src="https://i.ibb.co/8spYC1V/preview-transformed.png" />
           </div>
         )}
 
