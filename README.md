@@ -1,8 +1,17 @@
-# React + Vite
+# Dark/Light Modes
+- Switch between dark and light themes easily.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Device-Friendly Design
+- Browse the site on any device effortlessly; it adjusts to your screen.
 
-Currently, two official plugins are available:
+# Add Products with Ease
+- Easily add new items to your page.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Simple Cart Handling
+- Add items to your cart with a click.
+- Remove things from your cart without any hassle.
+
+# User-Friendly Interface
+- Move around and use the website without any difficulty.
+- 
+[Live Link](https://b8a10-brandshop-ruhannn.web.app/)
