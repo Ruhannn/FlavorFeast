@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Welcome from "../Welcome/Welcome";
 import FAQSection from "../FAQsection/FAQsection";
+import ReviewList from "../../ReviewList/ReviewList";
 
 const Home = () => {
   const [brands, setBrands] = useState([]);
@@ -50,6 +51,17 @@ const Home = () => {
             ))}
           </div>
         </div>
+        <div className="flex flex-col md:flex-col lg:flex-row justify-around">
+  <img
+    className="h-[626px] hidden lg:block sticky top-0 max-w-full"
+    src="https://cdn.discordapp.com/attachments/1151870132549865536/1160922550197555272/kamilike.png"
+    alt="Satisfied Girl"
+  />
+  <ReviewList />
+</div>
+
+
+
         <FAQSection></FAQSection>
       </section>
     </>
