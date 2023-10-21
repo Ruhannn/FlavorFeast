@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Root from "./layout/Root";
-import ErrorPage from "./ErrorPage/ErrorPage";
 import Home from "./Components/home/Home";
 import Login from "./Components/login_signup/Login";
 import SignUp from "./Components/login_signup/SignUp";
@@ -16,6 +15,7 @@ import Cart from "./Components/Cart/Cart";
 import Product from "./Components/Details/Product";
 import PrivateRoute from "./Route/PrivateRoute";
 import Update from "./Components/Update/Update";
+import ErrorPage from "./Components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {

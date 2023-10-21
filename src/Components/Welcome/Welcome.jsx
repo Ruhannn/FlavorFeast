@@ -5,7 +5,7 @@ const Welcome = () => {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center bg-[#81818168]  dark:bg-[#19171e] text-black transition-all duration-700">
+    <div className="h-[calc(100vh-500px)] flex items-center justify-center bg-[#81818168]  dark:bg-[#19171e] text-black transition-all duration-700">
       <div className="text-center">
         <h1 className="text-5xl dark:text-white font-extrabold mb-4 transform -skew-y-6 transition-transform hover:rotate-3 hover:scale-105">
           Welcome to FlavorFeast

@@ -3,7 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
-import NavBarCart from "../../NavBarCart/NavBarCart";
+import NavBarCart from "../NavBarCart/NavBarCart";
+
 
 const NavBar = () => {
   const { logOut, user } = useContext(AuthContext);

@@ -44,7 +44,6 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   useEffect(() => {
-    // Fetch FAQ data when the component mounts
     const fetchData = async () => {
       try {
         const response = await fetch("FAQ.json");
@@ -65,7 +64,7 @@ const FAQSection = () => {
   return (
     <>
       <style>{sty}</style>
-      <div className="bg-gray-100 py-8 dark:bg-[#1a1625] ">
+      <div className=" py-8 dark:bg-[#1a1625]  container mx-auto">
         <div className="max-w-2xl mx-auto">
           <h2 className="lg:text-3xl dark:text-white font-bold text-gray-800 mb-4 text-center text-xl">
             Frequently Asked Questions
@@ -757,9 +756,11 @@ const FAQSection = () => {
               {faqData.map((item, index) => (
                 <div
                   key={index}
-                  className={`faq-item dark:bg-[#010101] dark:text-white ${openIndex === index ? "open" : ""}`}>
+                  className={`faq-item dark:bg-[#010101] dark:text-white ${
+                    openIndex === index ? "open" : ""
+                  }`}>
                   <div
-                    className="faq-header flex justify-between items-center" 
+                    className="faq-header flex justify-between items-center"
                     onClick={() => toggleDropdown(index)}>
                     <span className="w-4/5">{item.question}</span>
                     <span className="w-1/5 text-right cursor-pointer">
@@ -767,7 +768,9 @@ const FAQSection = () => {
                     </span>
                   </div>
                   {openIndex === index && (
-                    <div className="faq-content dark:text-slate-300 ">{item.answer}</div>
+                    <div className="faq-content dark:text-slate-300 ">
+                      {item.answer}
+                    </div>
                   )}
                 </div>
               ))}

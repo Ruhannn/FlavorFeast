@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Welcome from "../Welcome/Welcome";
 import FAQSection from "../FAQsection/FAQsection";
-import ReviewList from "../../ReviewList/ReviewList";
+import ReviewList from "../ReviewList/ReviewList";
+import Banner from "../Banner/Banner";
 
 const Home = () => {
   const [brands, setBrands] = useState([]);
@@ -23,7 +24,8 @@ const Home = () => {
 
   return (
     <>
-      <section className="dark:bg-[#1a1625]">
+      <section className="dark:bg-[#1a1625]" >
+        <Banner></Banner>
         <Welcome></Welcome>
         <div
           className="container mx-auto bg-base-100 dark:bg-[#1a1625] p-4"
@@ -51,17 +53,14 @@ const Home = () => {
             ))}
           </div>
         </div>
-        <div className="flex flex-col md:flex-col lg:flex-row justify-around">
-  <img
-    className="h-[626px] hidden lg:block sticky top-0 max-w-full"
-    src="https://cdn.discordapp.com/attachments/1151870132549865536/1160922550197555272/kamilike.png"
-    alt="Satisfied Girl"
-  />
-  <ReviewList />
-</div>
-
-
-
+        <div className="flex flex-col md:flex-row justify-around">
+          <img
+            className="lg:h-[626px] h-[300px] hidden lg:block sticky top-0 max-w-full"
+            src="https://cdn.discordapp.com/attachments/1151870132549865536/1160922550197555272/kamilike.png"
+            alt="Satisfied Girl"
+          />
+          <ReviewList />
+        </div>
         <FAQSection></FAQSection>
       </section>
     </>
