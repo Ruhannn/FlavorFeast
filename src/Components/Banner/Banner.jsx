@@ -13,7 +13,6 @@ const Banner = () => {
       className="h-[calc(100vh-400px)]"
       transitionDelay={250}
       mobileTouch={true}
-      infinite={true}
       bullets={false}>
       <div data-src="https://i.ibb.co/jGw39cC/4419157.jpg" />
       <div data-src="https://i.ibb.co/V3CBXGL/4452317.jpg" />
